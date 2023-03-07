@@ -1,12 +1,19 @@
 import React from "react";
+import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/createpost">記事投稿</Link>
-      <Link to="/login">ログイン</Link>
+    <nav className={styles.nav}>
+      <Link className={styles.link} to="/">
+        Home
+      </Link>
+      <Link className={styles.link} to="/createpost">
+        記事投稿
+      </Link>
+      <Link className={styles.link} to="/login">
+        ログイン
+      </Link>
     </nav>
   );
 };
