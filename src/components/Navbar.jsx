@@ -1,17 +1,24 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faEdit,
+  faArrowRightToBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <Link className={styles.link} to="/">
-        Home
+        <FontAwesomeIcon className={styles.icon} icon={faHome} /> Home
       </Link>
       <Link className={styles.link} to="/createpost">
-        記事投稿
+        <FontAwesomeIcon className={styles.icon} icon={faEdit} /> 記事投稿
       </Link>
       <Link className={styles.link} to="/login">
+        <FontAwesomeIcon className={styles.icon} icon={faArrowRightToBracket} />{" "}
         ログイン
       </Link>
     </nav>
