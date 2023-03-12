@@ -1,0 +1,57 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.container {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 500px;
+    gap: 10px;
+    padding: 40px;
+    box-shadow: 5px 9px 15px -5px rgba(0, 0, 0, .3);
+}
+
+.headtitle {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+}
+
+.inputPost h2 {
+    font-size: 16px;
+}
+
+.inputPost input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 0 4px;
+}
+
+.inputPost textarea {
+    width: 100%;
+    height: 120px;
+    outline: none;
+    padding: 7px;
+}
+
+.postBtn {
+    padding: 10px 0;
+    background: #0d4c92;
+    color: #fff;
+    box-shadow: 5px 9px 15px -5px rgba(0, 0, 0, .3);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.postBtn:hover {
+    transform: translateY(5px);
+    box-shadow: none;
+}
