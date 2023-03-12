@@ -1,9 +1,24 @@
+import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase";
 import styles from "./CreatePost.module.css";
 
 const CreatePost = () => {
   const [title, setTitle] = useState();
   const [postText, setPostText] = useState();
+  const navigate = useNavigate();
+  const handleCreate = async () => {
+    await addDoc(collection(db, "posts"), {
+      title: title,
+      postText: postText,
+      author: {
+        username: auth.currentUser.displayName,
+        id: auth.currentUser.uid,
+      },
+    });
+    navigate("/");
+  };
   return (
     <div className={styles.page}>
       <div className={styles.container}>
@@ -23,7 +38,9 @@ const CreatePost = () => {
             onChange={(e) => setPostText(e.target.value)}
           ></textarea>
         </div>
-        <button className={styles.postBtn}>投稿する</button>
+        <button className={styles.postBtn} onClick={handleCreate}>
+          投稿する
+        </button>
       </div>
     </div>
   );
