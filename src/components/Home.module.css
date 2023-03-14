@@ -1,0 +1,59 @@
+.page {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.postContents {
+    width: 600px;
+    height: auto;
+    min-height: 600px;
+    box-shadow: 5px 9px 15px -5px #777777;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.postHeader {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.postHeader h1 {
+    font-size: inherit;
+}
+
+.postTextContainer {
+    height: auto;
+    word-wrap: break-word;
+    max-height: 400px;
+    width: 100%;
+}
+
+.postName {
+    display: flex;
+    align-items: center;
+}
+
+.postName button {
+    flex: 15%;
+    background: #d36262;
+    border: 1px solid #d36262;
+    padding: 7px 10px;
+    transition: .3s ease;
+    color: #fff;
+}
+
+.postName button:hover {
+    background: #fff;
+    color: #d36262;
+    border: 1px solid #d36262;
+}
+
+.postName h3 {
+    flex: 85%;
+}
