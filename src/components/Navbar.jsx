@@ -14,9 +14,6 @@ const Navbar = ({ isAuth }) => {
       <Link className={styles.link} to="/">
         <FontAwesomeIcon className={styles.icon} icon={faHome} /> Home
       </Link>
-      <Link className={styles.link} to="/createpost">
-        <FontAwesomeIcon className={styles.icon} icon={faEdit} /> 記事投稿
-      </Link>
       {!isAuth ? (
         <Link className={styles.link} to="/login">
           <FontAwesomeIcon
@@ -26,13 +23,18 @@ const Navbar = ({ isAuth }) => {
           ログイン
         </Link>
       ) : (
-        <Link className={styles.link} to="/logout">
-          <FontAwesomeIcon
-            className={styles.icon}
-            icon={faArrowRightToBracket}
-          />
-          ログアウト
-        </Link>
+        <>
+          <Link className={styles.link} to="/createpost">
+            <FontAwesomeIcon className={styles.icon} icon={faEdit} /> 記事投稿
+          </Link>
+          <Link className={styles.link} to="/logout">
+            <FontAwesomeIcon
+              className={styles.icon}
+              icon={faArrowRightToBracket}
+            />
+            ログアウト
+          </Link>
+        </>
       )}
     </nav>
   );
