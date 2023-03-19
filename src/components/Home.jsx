@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { collection, deleteDoc, getDocs, doc } from "firebase/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 const Home = () => {
   const [postList, setPostList] = useState([]);
   useEffect(() => {
@@ -26,7 +26,9 @@ const Home = () => {
             <div className={styles.postTextContainer}>{post.postText}</div>
             <div className={styles.postName}>
               <h3>@ {post.author.username}</h3>
-              <button onClick={() => handleDelete(post.id)}>削除</button>
+              {post.author.id === auth.currentUser.uid && (
+                <button onClick={() => handleDelete(post.id)}>削除</button>
+              )}
             </div>
           </div>
         );
