@@ -11,11 +11,14 @@
 .postContents {
     width: 600px;
     height: auto;
-    min-height: 600px;
     box-shadow: 5px 9px 15px -5px #777777;
     background: #fff;
     padding: 20px;
     border-radius: 15px;
+}
+
+.postContents+.postContents {
+    margin-top: 40px;
 }
 
 .postHeader {
