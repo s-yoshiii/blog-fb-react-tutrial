@@ -10,7 +10,6 @@ const Login = ({ setIsAuth }) => {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-      console.log(result);
     });
   };
   return (
